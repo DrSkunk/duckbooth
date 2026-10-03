@@ -38,6 +38,34 @@ Run these commands as `booth` from the graphical desktop session. The autostart 
 
 ## Using the booth
 
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Visitor
+    participant Booth as Touchscreen app
+    participant Camera
+    participant Photos as Photo folder
+    participant Gallery as Gallery screen
+
+    Visitor->>Booth: Tap start
+    Booth-->>Visitor: Show build instructions
+    Visitor->>Booth: Tap when ready
+    Booth->>Booth: Check for at least 1 GiB free
+    Booth-->>Visitor: Show 45-second build countdown
+    Booth->>Camera: Request live preview frames
+    Camera-->>Booth: Preview frames
+    Booth-->>Visitor: Show preview for 5 seconds
+    Booth->>Camera: Capture still photo
+    Camera->>Photos: Save JPEG
+    opt Edge crop configured
+        Booth->>Photos: Crop saved photo
+    end
+    Booth-->>Visitor: Show thank-you screen
+    Gallery->>Photos: Poll for photos every 2 seconds
+    Photos-->>Gallery: Newest 20 JPEGs
+    Booth-->>Visitor: Return to start after 5 seconds
+```
+
 Tap the first screen, build your duck, then tap again. The booth gives you 45 seconds to build, followed by a five-second camera preview to position the duck. It takes one photo, shows a thank-you screen for five seconds, and returns to the start. The gallery updates every two seconds and shows the newest 20 JPEGs. If the gallery monitor is disconnected, the booth continues on the touchscreen.
 
 The gear button on the start screen opens camera settings. Zoom runs from 1.0× to 3.0× in 0.1× steps. You can also trim each edge of the saved photo in 5% steps, up to 35% per edge. The preview shades the parts that will be cut off. Changes are saved immediately to `/home/booth/duckbooth/settings.json`; **Herstel alles** resets them and **Klaar** returns to the start screen.
