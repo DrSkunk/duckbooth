@@ -6,7 +6,9 @@ __pycache__/
 *.py[cod]
 .venv/
 .pytest_cache/
+.DS_Store
 
 # Duckbooth runtime data
-/duckbooth/settings.json
+/settings.json
+/duckbooth.log
 /photobooth/photos/
