@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Start Duckbooth
+Comment=Start the Duckbooth kiosk
+Exec=systemctl --user start duckbooth.service
+Icon=camera-photo
+Terminal=false
+Categories=Utility;

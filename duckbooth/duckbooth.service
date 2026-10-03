@@ -1,0 +1,16 @@
+[Unit]
+Description=Duckbooth touchscreen application
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+Environment=QT_QPA_PLATFORM=wayland
+Environment=WAYLAND_DISPLAY=wayland-0
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+ExecStart=/usr/bin/python3 /home/booth/duckbooth/main.py
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

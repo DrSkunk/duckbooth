@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Duckbooth
+Comment=Start the Duckbooth touchscreen application
+Exec=/home/booth/duckbooth/start-duckbooth.sh
+Terminal=false
+X-GNOME-Autostart-enabled=true

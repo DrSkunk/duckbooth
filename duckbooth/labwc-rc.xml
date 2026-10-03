@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <touch deviceName="ILITEK ILITEK Multi-Touch" mapToOutput="HDMI-A-2" mouseEmulation="yes"/>
+  <windowRules>
+    <windowRule title="Duckbooth gallery">
+      <action name="MoveToOutput" output="HDMI-A-1"/>
+      <action name="Maximize"/>
+    </windowRule>
+  </windowRules>
+</labwc_config>

@@ -1,0 +1,12 @@
+# Local credentials
+/password
+
+# Python-generated files and local environments
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Duckbooth runtime data
+/duckbooth/settings.json
+/photobooth/photos/
